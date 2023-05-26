@@ -40,11 +40,25 @@ module test_full_adder_8bit();
             #10;
             
             b = 8'd10;
-            // assert 10
+            // assert 14
             
             #10
             
             cin = 1;
-            // assert 11
+            // assert 15
+            
+            #10;
+            
+            a = 8'hff;
+            b = 8'd0;
+            cin = 1;
+            // assert cout en 1
+            
+            #10;
+            
+            a = 8'hff;
+            b = 8'd3;
+            cin = 0;
+            // assert cout en 1 y s en 2
         end
 endmodule
