@@ -24,18 +24,27 @@
 module test_full_adder_8bit();
     reg [7:0] a, b;
     wire [7:0] s;
+    reg cin;
     wire cout;
-    supply0 cin;
     
     full_adder_8bit UUT(.a(a), .b(b), .cin(cin), .cout(cout), .s(s));
     
     initial
         begin
+            cin = 0;
+        
             a = 8'd4;
             b = 8'd4;
+            // assert 8
             
             #10;
             
             b = 8'd10;
+            // assert 10
+            
+            #10
+            
+            cin = 1;
+            // assert 11
         end
 endmodule
